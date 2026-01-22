@@ -7,9 +7,9 @@ module.exports.config = {
  version: "1.0.0",
  hasPermssion: 2, 
  credits: "🔰Rahat🔰",
- description: "সকল গ্রুপে নোটিশ পাঠান (টেক্সট, ইমেজ, ভিডিও, অডিও, ফাইল সহ)",
+ description: "إرسال إشعار لجميع المجموعات (نص، صورة، فيديو، صوت، أو ملف)",
  commandCategory: "Admin",
- usages: "/notice <টেক্সট> বা রিপ্লাই দিয়ে মেসেজ দিন",
+ usages: "/notice <نص> أو قم بالرد على رسالة للإرسال",
  cooldowns: 5,
 };
 
@@ -24,24 +24,21 @@ module.exports.run = async ({ api, event, args, Users }) => {
  const replyMsg = event.messageReply;
  const attachments = replyMsg.attachments || [];
 
- 
  for (const attachment of attachments) {
  const fileUrl = attachment.url;
  const fileName = path.basename(fileUrl);
  const filePath = path.join(__dirname, `cache/${fileName}`);
 
  try {
- 
  const response = await axios.get(fileUrl, { responseType: "arraybuffer" });
  await fs.writeFile(filePath, Buffer.from(response.data, "binary"));
 
- 
  for (const threadID of allThreads) {
  if (threadID != event.threadID) { 
  try {
  await api.sendMessage(
  {
- body: `📢 নোটিশ From Admin: (${senderName})\n\n${replyMsg.body || args.join(" ")}`,
+ body: `📢 إشعار من الإدارة: (${senderName})\n\n${replyMsg.body || args.join(" ")}`,
  attachment: fs.createReadStream(filePath),
  },
  threadID
@@ -49,17 +46,16 @@ module.exports.run = async ({ api, event, args, Users }) => {
  successCount++;
  } catch (error) {
  failedCount++;
- console.error(`Failed to send to ${threadID}:`, error);
+ console.error(`فشل الإرسال إلى ${threadID}:`, error);
  }
- await new Promise((resolve) => setTimeout(resolve, 1000)); // Rate limit এড়ানোর জন্য
+ await new Promise((resolve) => setTimeout(resolve, 1000)); // لتجنب الحد الأقصى للإرسال
  }
  }
 
- 
  await fs.unlink(filePath);
  } catch (error) {
- console.error("File download/send error:", error);
- api.sendMessage("❌ ফাইল পাঠানোতে সমস্যা হয়েছে!", event.threadID);
+ console.error("خطأ في تحميل/إرسال الملف:", error);
+ api.sendMessage("❌ حدثت مشكلة أثناء إرسال الملف!", event.threadID);
  }
  }
  } 
@@ -71,30 +67,30 @@ module.exports.run = async ({ api, event, args, Users }) => {
  if (threadID != event.threadID) {
  try {
  await api.sendMessage(
- `📢 নোটিশ (${senderName}):\n${noticeText}`,
+ `📢 إشعار (${senderName}):\n${noticeText}`,
  threadID
  );
  successCount++;
  } catch (error) {
  failedCount++;
- console.error(`Failed to send to ${threadID}:`, error);
+ console.error(`فشل الإرسال إلى ${threadID}:`, error);
  }
- await new Promise((resolve) => setTimeout(resolve, 500)); // Rate limit এড়ানোর জন্য
+ await new Promise((resolve) => setTimeout(resolve, 500)); // لتجنب الحد الأقصى للإرسال
  }
  }
  } else {
  return api.sendMessage(
- "ℹ️ ব্যবহার:\n• `/notice <টেক্সট>`\n• বা কোনো মেসেজ রিপ্লাই দিয়ে `/notice` লিখুন",
+ "ℹ️ الاستخدام:\n• `/notice <نص>`\n• أو قم بالرد على أي رسالة واكتب `/notice`",
  event.threadID
  );
  }
 
  api.sendMessage(
- `✅ ${successCount} টি গ্রুপে নোটিশ পাঠানো হয়েছে!\n❌ ${failedCount} টি গ্রুপে পাঠানো যায়নি।`,
+ `✅ تم إرسال الإشعار إلى ${successCount} مجموعة!\n❌ لم يتم الإرسال إلى ${failedCount} مجموعة.`,
  event.threadID
  );
  } catch (error) {
- console.error("Global error:", error);
- api.sendMessage("❌ নোটিশ পাঠাতে সমস্যা হয়েছে!", event.threadID);
+ console.error("خطأ عام:", error);
+ api.sendMessage("❌ حدثت مشكلة أثناء إرسال الإشعار!", event.threadID);
  }
 };
