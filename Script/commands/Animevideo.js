@@ -3,9 +3,9 @@ module.exports.config = {
  version: "1.0.0",
  hasPermssion: 0,
  credits: "🔰𝐑𝐀𝐇𝐀𝐓 𝐈𝐒𝐋𝐀𝐌🔰",
- description: "ANIME VIDEO",
+ description: "فيديو أنمي",
  commandCategory: "group",
- usages: "anime video",
+ usages: "فيديو أنمي",
  cooldowns: 5,
  dependencies: {
  'request': '',
@@ -18,13 +18,12 @@ module.exports.run = async ({ api, event, args }) => {
  const request = global.nodemodule.request;
  const fs = global.nodemodule["fs-extra"];
  
- 
  const messages = [
- "☆《ANIME VIDEO》☆"
+ "☆《فيديو أنمي》☆"
  ];
  const randomMessage = messages[Math.floor(Math.random() * messages.length)];
  
- // Video URLs
+ // روابط الفيديو
  const videoUrls = [
  "https://drive.google.com/uc?id=1gI265E7VL9cdyk6TuuFav2uA1HifQs5Y",
  "https://drive.google.com/uc?id=1gMAKxgOmW8KHCGZHHgdy9oVbAQlwju1R",
