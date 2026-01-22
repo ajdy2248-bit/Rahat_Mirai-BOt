@@ -3,9 +3,9 @@ module.exports.config = {
 	version: "1.0.0",
 	hasPermssion: 2,
 	credits: "𝐏𝐫𝐢𝐲𝐚𝐧𝐬𝐡 𝐑𝐚𝐣𝐩𝐮𝐭",
-	description: "Change the nickname of the entire group",
+	description: "تغيير اسم جميع المجموعات",
 	commandCategory: "System",
-	usages: "[Nickname needs to be placed]",
+	usages: "[ضع الاسم الجديد هنا]",
 	cooldowns: 20,
 };
 
@@ -20,8 +20,8 @@ module.exports.run = async ({ event, api, args, Threads }) => {
             count+=1;
             await new Promise(resolve => setTimeout(resolve, 500));
         }
-        return api.sendMessage(`Has changed the name successfully ${count} group`, event.threadID, () => {
-            if (threadError != 0) return api.sendMessage("[!] Cannot change the name at" + threadError.lenght + " Group",event.threadID, event.messageID)
+        return api.sendMessage(`تم تغيير الاسم بنجاح في ${count} مجموعة`, event.threadID, () => {
+            if (threadError != 0) return api.sendMessage("[!] لا يمكن تغيير الاسم في " + threadError.length + " مجموعة", event.threadID, event.messageID)
         }, event.messageID);
     }
-}
+		}
