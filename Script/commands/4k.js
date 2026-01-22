@@ -6,8 +6,8 @@ module.exports.config = {
     name: "4k",
     version: "1.0",
     credits: "🔰𝐑𝐀𝐇𝐀𝐓 𝐈𝐒𝐋𝐀𝐌🔰",
-    description: "Upscale image to 4K using API",
-    usages: "!4k (reply to a photo)",
+    description: "تحسين الصورة إلى دقة 4K باستخدام API",
+    usages: "!4k (رد على صورة)",
     commandCategory: "AI",
     cooldowns: 5
 };
@@ -29,7 +29,7 @@ module.exports.run = async function ({ api, event, args }) {
     const imageUrl = extractImageUrl(event);
 
     if (!imageUrl)
-        return api.sendMessage("❌ Please reply to an image.", event.threadID, event.messageID);
+        return api.sendMessage("❌ الرجاء الرد على صورة.", event.threadID, event.messageID);
 
     api.setMessageReaction("⏳", event.messageID, () => {}, true);
 
@@ -42,7 +42,7 @@ module.exports.run = async function ({ api, event, args }) {
         const data = apiRes.data;
 
         if (!data.image)
-            throw new Error("API did not return image URL");
+            throw new Error("لم يُرجع الـ API رابط للصورة");
 
         const finalUrl = data.image;
 
@@ -65,7 +65,7 @@ module.exports.run = async function ({ api, event, args }) {
 
         return api.sendMessage(
             {
-                body: `✅𝐃𝐨𝐧𝐞`,
+                body: `✅ تم التحسين بنجاح`,
                 attachment: fs.createReadStream(tempFile)
             },
             event.threadID,
@@ -74,12 +74,12 @@ module.exports.run = async function ({ api, event, args }) {
         );
 
     } catch (err) {
-        console.log("4K UPSCALE ERROR:", err);
+        console.log("خطأ في تحسين الصورة 4K:", err);
 
         api.setMessageReaction("❌", event.messageID, () => {}, true);
 
         return api.sendMessage(
-            `❌ Error: ${err.message || "Something went wrong."}`,
+            `❌ خطأ: ${err.message || "حدث خطأ ما."}`,
             event.threadID,
             event.messageID
         );
