@@ -1,44 +1,55 @@
 module.exports.config = {
- name: "onlyadmin",
- version: "1.0",
- hasPermssion: 2,
- credits: "🔰𝐑𝐀𝐇𝐀𝐓 𝐈𝐒𝐋𝐀𝐌🔰",
- description: "Admin only",
- commandCategory: "Admin",
- usages: "qtvonly",
- cooldowns: 5,
- dependencies: {
- "fs-extra": ""
- }
+    name: "onlyadmin",
+    version: "1.0",
+    hasPermssion: 2,
+    credits: "🔰𝐑𝐀𝐇𝐀𝐓 𝐈𝐒𝐋𝐀𝐌🔰",
+    description: "للإدمن فقط",
+    commandCategory: "Admin",
+    usages: "qtvonly",
+    cooldowns: 5,
+    dependencies: {
+        "fs-extra": ""
+    }
 };
 
 module.exports.onLoad = function() {
- const { writeFileSync, existsSync } = require('fs-extra');
- const { resolve } = require("path");
- const path = resolve(__dirname, 'cache', 'data.json');
- if (!existsSync(path)) {
- const obj = {
- adminbox: {}
- };
- writeFileSync(path, JSON.stringify(obj, null, 4));
- } else {
- const data = require(path);
- if (!data.hasOwnProperty('adminbox')) data.adminbox = {};
- writeFileSync(path, JSON.stringify(data, null, 4));
- }
-}
-module.exports.run = async function ({ api, event, args }) {
-const { threadID, messageID, mentions } = event;
+    const { writeFileSync, existsSync } = require('fs-extra');
+    const { resolve } = require("path");
+    const path = resolve(__dirname, 'cache', 'data.json');
 
- const { resolve } = require("path");
- const pathData = resolve(__dirname, 'cache', 'data.json');
- const database = require(pathData);
- const { adminbox } = database; 
- if (adminbox[threadID] == true) {
- adminbox[threadID] = false;
- api.sendMessage("» Successfully disabled admin and only mode (everyone can use bots)", threadID, messageID);
- } else {
- adminbox[threadID] = true;
- api.sendMessage("» Successfully enabled admin only mode (only admin with admin of group can use bot)", threadID, messageID);
- }
-}
+    if (!existsSync(path)) {
+        const obj = {
+            adminbox: {}
+        };
+        writeFileSync(path, JSON.stringify(obj, null, 4));
+    } else {
+        const data = require(path);
+        if (!data.hasOwnProperty('adminbox')) data.adminbox = {};
+        writeFileSync(path, JSON.stringify(data, null, 4));
+    }
+};
+
+module.exports.run = async function ({ api, event, args }) {
+    const { threadID, messageID } = event;
+
+    const { resolve } = require("path");
+    const pathData = resolve(__dirname, 'cache', 'data.json');
+    const database = require(pathData);
+    const { adminbox } = database;
+
+    if (adminbox[threadID] == true) {
+        adminbox[threadID] = false;
+        api.sendMessage(
+            "» تم تعطيل وضع الإدمن فقط (يمكن للجميع استخدام البوت)",
+            threadID,
+            messageID
+        );
+    } else {
+        adminbox[threadID] = true;
+        api.sendMessage(
+            "» تم تفعيل وضع الإدمن فقط (فقط إدمن المجموعة يمكنه استخدام البوت)",
+            threadID,
+            messageID
+        );
+    }
+};
