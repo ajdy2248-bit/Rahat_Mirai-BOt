@@ -3,7 +3,7 @@ module.exports.config = {
 	version: "1.0.0",
 	hasPermssion: 0,
 	credits: "𝐂𝐘𝐁𝐄𝐑 ☢️_𖣘 -𝐁𝐎𝐓 ⚠️ 𝑻𝑬𝑨𝑴_ ☢️",
-    description: "Parent group settingst.",
+    description: "إعدادات المجموعة الرئيسية",
 	commandCategory: "box",
 	usages: "[name/emoji/admin/image/info]",
 	cooldowns: 1,
@@ -16,7 +16,7 @@ module.exports.config = {
 module.exports.run = async({api, event, args}) => {
 	const fs = global.nodemodule["fs-extra"];
 	const request = global.nodemodule["request"];
-	 if (args.length == 0) return api.sendMessage(`You can use:\n/groupemoji [icon]\n\n/groupname [the box name needs to be changed]\n\n/groupimage [rep any image needs to be set as group chat image]\n\n/gcadmin [tag] => it will give qtv to the person tagged\n\n/groupinfo => All group information !
+	 if (args.length == 0) return api.sendMessage(`يمكنك استخدام:\n/groupemoji [الأيقونة]\n\n/groupname [اسم المجموعة الجديد]\n\n/groupimage [قم بالرد على أي صورة لتعيينها كصورة للمجموعة]\n\n/gcadmin [الوسم] => سيجعل الشخص الموسوم مشرف\n\n/groupinfo => جميع معلومات المجموعة!
 `, event.threadID, event.messageID);
 
 
@@ -34,8 +34,8 @@ if(args[0] == "me"){
 	 if (args[1] == "admin") {
 		const threadInfo = await api.getThreadInfo(event.threadID)
 		const find = threadInfo.adminIDs.find(el => el.id == api.getCurrentUserID());
-		if(!find) api.sendMessage("BOT needs to throw admin to use ?", event.threadID, event.messageID)
-	  else if(!global.config.ADMINBOT.includes(event.senderID)) api.sendMessage("Cunt powers ?", event.threadID, event.messageID)
+		if(!find) api.sendMessage("البوت يحتاج أن يكون مشرف لاستخدام هذا الأمر", event.threadID, event.messageID)
+	  else if(!global.config.ADMINBOT.includes(event.senderID)) api.sendMessage("ليس لديك صلاحيات كافية", event.threadID, event.messageID)
      else api.changeAdminStatus(event.threadID, event.senderID, true);
      }
 } 
@@ -51,17 +51,17 @@ const findd = threadInfo.adminIDs.find(el => el.id == namee);
 const find = threadInfo.adminIDs.find(el => el.id == api.getCurrentUserID());
 const finddd = threadInfo.adminIDs.find(el => el.id == event.senderID);
 
-if (!finddd) return api.sendMessage("You are not a box admin ?", event.threadID, event.messageID);		
-if(!find) {api.sendMessage("Don't throw the admin using the cock?", event.threadID, event.messageID)}
+if (!finddd) return api.sendMessage("أنت لست مشرفًا في المجموعة", event.threadID, event.messageID);		
+if(!find) {api.sendMessage("لا يمكنك تعيين مشرف بدون أن تكون مشرفًا", event.threadID, event.messageID)}
 if (!findd) {api.changeAdminStatus(event.threadID, namee, true);}
 else api.changeAdminStatus(event.threadID, namee, false)
  }
 
 if (args[0] == "image") {
 
-if (event.type !== "message_reply") return api.sendMessage("❌ You must reply to a certain audio, video, or photo", event.threadID, event.messageID);
-	if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("❌ You must reply to a certain audio, video, or photo", event.threadID, event.messageID);
-	if (event.messageReply.attachments.length > 1) return api.sendMessage(`Please reply only one audio, video, photo!`, event.threadID, event.messageID);
+if (event.type !== "message_reply") return api.sendMessage("❌ يجب الرد على ملف صوتي، فيديو، أو صورة محددة", event.threadID, event.messageID);
+	if (!event.messageReply.attachments || event.messageReply.attachments.length == 0) return api.sendMessage("❌ يجب الرد على ملف صوتي، فيديو، أو صورة محددة", event.threadID, event.messageID);
+	if (event.messageReply.attachments.length > 1) return api.sendMessage(`الرجاء الرد على ملف واحد فقط: صوت، فيديو أو صورة!`, event.threadID, event.messageID);
 	 var callback = () => api.changeGroupImage(fs.createReadStream(__dirname + "/cache/1.png"), event.threadID, () => fs.unlinkSync(__dirname + "/cache/1.png"));	
       return request(encodeURI(event.messageReply.attachments[0].url)).pipe(fs.createWriteStream(__dirname+'/cache/1.png')).on('close',() => callback());
       };
@@ -99,12 +99,12 @@ const name = infu[qtv2[i].id].name;
 		listad += '•' + name + '\n';
 	}
 	let sex = threadInfo.approvalMode;
-	var pd = sex == false ? 'Turn off' : sex == true ? 'Turn on' : 'Kh';
+	var pd = sex == false ? 'إيقاف' : sex == true ? 'تشغيل' : 'غير معروف';
 	var pdd = sex == false ? '❎' : sex == true ? '✅' : '⭕';
 	 var callback = () =>
 				api.sendMessage(
 					{
-						body: `GC Name: ${threadName}\nGC ID: ${id}\n${pdd} Approve: ${pd}\nEmoji: ${icon}\n-Information:\nTotal ${threadMem} members\nMale ${nam} members \nFemale: ${nu} members\n\nWith ${qtv} Administrators include:\n${listad}\nTotal number of messages: ${sl} msgs.`,
+						body: `اسم المجموعة: ${threadName}\nمعرف المجموعة: ${id}\n${pdd} الموافقة: ${pd}\nالإيموجي: ${icon}\n-معلومات:\nإجمالي الأعضاء: ${threadMem}\nأعضاء ذكور: ${nam}\nأعضاء إناث: ${nu}\n\nالمشرفون (${qtv}) يشملون:\n${listad}\nإجمالي الرسائل: ${sl} رسالة.`,
 						attachment: fs.createReadStream(__dirname + '/cache/1.png')
 					},
 					event.threadID,
@@ -116,4 +116,4 @@ const name = infu[qtv2[i].id].name;
 				.on('close', () => callback());
 
 	}	  
-}
+			 }
