@@ -6,7 +6,7 @@ module.exports = {
     hasPermission: 0,
     commandCategory: "utility",
     cooldowns: 5,
-    description: "Calculate age from birth date",
+    description: "حساب العمر من تاريخ الميلاد",
     usage: "[DD/MM/YYYY]",
     dependencies: {
       "moment-timezone": "",
@@ -23,14 +23,14 @@ module.exports = {
     try {
       
       if (!args[0]) {
-        return api.sendMessage("⚠️ Please provide your birth date in DD/MM/YYYY format\nExample: age 16/12/2006", event.threadID);
+        return api.sendMessage("⚠️ الرجاء إدخال تاريخ ميلادك بصيغة DD/MM/YYYY\nمثال: age 16/12/2006", event.threadID);
       }
 
       const input = args[0];
       const dateParts = input.split('/');
       
       if (dateParts.length !== 3) {
-        return api.sendMessage("❌ Invalid date format. Please use DD/MM/YYYY", event.threadID);
+        return api.sendMessage("❌ صيغة التاريخ غير صحيحة. الرجاء استخدام DD/MM/YYYY", event.threadID);
       }
 
       const day = parseInt(dateParts[0]);
@@ -39,13 +39,13 @@ module.exports = {
 
       
       if (isNaN(day) || day < 1 || day > 31) {
-        return api.sendMessage("❌ Invalid day (1-31)", event.threadID);
+        return api.sendMessage("❌ اليوم غير صالح (1-31)", event.threadID);
       }
       if (isNaN(month) || month < 1 || month > 12) {
-        return api.sendMessage("❌ Invalid month (1-12)", event.threadID);
+        return api.sendMessage("❌ الشهر غير صالح (1-12)", event.threadID);
       }
       if (isNaN(year) || year < 1000 || year > new Date().getFullYear()) {
-        return api.sendMessage("❌ Invalid year", event.threadID);
+        return api.sendMessage("❌ السنة غير صحيحة", event.threadID);
       }
 
       
@@ -53,7 +53,7 @@ module.exports = {
       const now = moment.tz("Asia/Dhaka");
       
       if (birthDate.isAfter(now)) {
-        return api.sendMessage("❌ You can't be born in the future!", event.threadID);
+        return api.sendMessage("❌ لا يمكنك أن تكون مولودًا في المستقبل!", event.threadID);
       }
 
       const duration = moment.duration(now.diff(birthDate));
@@ -84,16 +84,16 @@ module.exports = {
       
       const message = {
         body: `┏━━━━━━━━━━━━━━━━❂
-┃            🎂 𝗔𝗚𝗘 𝗖𝗔𝗟𝗖𝗨𝗟𝗔𝗧𝗢𝗥  🎂
+┃            🎂 حَاسِب العُمْر 🎂
 ┣━━━━━━━━━━━━━━━━❂
-┃✦ 𝗗𝗮𝘁𝗲 𝗼𝗳 𝗕𝗶𝗿𝘁𝗵: ${day}/${month}/${year}
-┃✦ 𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗔𝗴𝗲: ${years} years ${months} months
-┣━━━━[ 𝗗𝗘𝗧𝗔𝗜𝗟𝗦 ]━━━━❂
-┃❖ ${totalMonths} Months
-┃❖ ${totalDays} Days
-┃❖ ${totalHours} Hours
+┃✦ تاريخ الميلاد: ${day}/${month}/${year}
+┃✦ العمر الحالي: ${years} سنة و ${months} شهر
+┣━━━━[ التفاصيل ]━━━━❂
+┃❖ ${totalMonths} أشهر
+┃❖ ${totalDays} أيام
+┃❖ ${totalHours} ساعات
 ┣━━━━━━━━━━━━━━━━❂
-┃  𝗖𝗿𝗲𝗮𝘁𝗲𝗱 𝗯𝘆: ─꯭─⃝‌‌𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭
+┃  تم الإنشاء بواسطة: ─꯭─⃝‌‌𝐒𝐡𝐚𝐡𝐚𝐝𝐚𝐭 𝐂𝐡𝐚𝐭 𝐁𝐨𝐭
 ┗━━━━━━━━━━━━━━━━❂`,
         attachment: fs.createReadStream(avatarPath)
       };
@@ -102,8 +102,8 @@ module.exports = {
       fs.unlinkSync(avatarPath);
 
     } catch (error) {
-      console.error("Error in age command:", error);
-      api.sendMessage("❌ An error occurred while processing your request", event.threadID);
+      console.error("خطأ في أمر حساب العمر:", error);
+      api.sendMessage("❌ حدث خطأ أثناء معالجة طلبك", event.threadID);
     }
   }
 };
