@@ -19,12 +19,10 @@
     "BOTNAME": "🔰𝗥𝗮𝗵𝗮𝘁_𝗕𝗼𝘁🔰",
     "PREFIX": "/",
     "ADMINBOT": [
-        "61582311465479",
-        "61584194023750",
-        "61582708907708"
+        "61586596176399"
     ],
     "NDH": [
-        "61582708907708"
+        "61574697790069"
     ],
     "DATABASE": {
         "sqlite": {
@@ -117,7 +115,6 @@
         "timeToUnsend": 10
     },
     "sing": {
-        "API_KEY": "AIzaSyDdzsxzYZAoBCxF-TXQyVhd52_Tslu-FXU",
         "YOUTUBE_API": "AIzaSyDdzsxzYZAoBCxF-TXQyVhd52_Tslu-FXU",
         "SOUNDCLOUD_API": "M4TSyS6eV0AcMynXkA3qQASGcOFQTWub"
     },
@@ -239,4 +236,4 @@
     "vip": {
         "cooldownTime": 1200000
     }
-}
+    }
