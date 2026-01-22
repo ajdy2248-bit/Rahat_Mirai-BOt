@@ -1,88 +1,93 @@
 const fs = global.nodemodule["fs-extra"];
+
 module.exports.config = {
   name: "Obot",
   version: "1.0.1",
   hasPermssion: 0,
   credits: "🔰𝐑𝐀𝐇𝐀𝐓 𝐈𝐒𝐋𝐀𝐌🔰",
-  description: "goibot",
+  description: "بوت محادثة عشوائية",
   commandCategory: "Noprefix",
   usages: "noprefix",
   cooldowns: 5,
 };
 
 module.exports.handleEvent = async function({ api, event, args, Threads, Users }) {
-  var { threadID, messageID, reason } = event;
+  var { threadID, messageID } = event;
   const moment = require("moment-timezone");
   const time = moment.tz("Asia/Dhaka").format("HH:MM:ss L");
-  var idgr = `${event.threadID}`;
   var id = event.senderID;
   var name = await Users.getNameUser(event.senderID);
 
+  // الرسائل العشوائية بالعربية
   var tl = [
-    "إذا زادت بوت سأغادر 😒😒",
-    "لن أسمع 😼 لم تحب رئيسي (راهات) 🥺 يا فاشل 🥺",
-    "أنا لا أتحدث مع الأغبياء، حسناً 😒",
-    "لا تناديني كثيراً، سأقع في الحب 🙈",
-    "قل لي يا حبيبي، هل تحبني؟ 🙈💋",
-    "إذا ناديت كثيراً سأغضب 😑",
-    "نعم قل 😒، ماذا يمكنني أن أفعل من أجلك 😐😑؟",
-    "لماذا تنادي كثيراً؟ هل تريد الشتائم؟ 🤬",
-    "أحبك يا جانو 🥰",
-    "أهلاً قل لي كيف حالك 😚",
-    "أنت لا تحترمني 😰😿",
-    "توقف 😾 قل رئيس 😼",
-    "اصمت وإلا سأكسر أسنانك",
-    "إذا قلت بوت مرة أخرى سأقصه وأجعله صغيراً 🤭🤫",
-    "لماذا يغادر البوت هكذا 😤🥺 ماذا حدث؟",
-    "قل يا جانو 😘",
-    "تزعجني كثيراً 😾، أنا مشغول مع جانو 😋",
-    "يا أحمق لماذا تنادي كثيراً 🤬",
-    "إذا ناديتني، سأعطيك قبلة 😘",
-    "لا تناديني كثيراً، ليس لدي مزاج للمرح 😒",
-    "أنا هنا مخفي، لا تزعجني 🙊🙁",
-    "نعم يا جانو، تعال من هنا سأعطيك قبلة 🤭 😘",
-    "ابتعد، ليس لديك عمل، فقط تدير بوت بوت 😉😋🤣",
-    "لا أحد في بيتك يسمع كلامك، فهل سأسمع أنا؟ 🤔😂",
-    "لا تناديني، أنا مشغول",
-    "ماذا حدث؟ هل ارتكبت خطأً؟ 🤣",
-    "قل ماذا ستقول، هل ستقوله أمام الجميع؟ 🤭🤏",
-    "هل سنلتقي غداً؟ 😈",
-    "نعم قل، أنا أستمع 😏",
-    "كم مرة ستنادي؟ أنا أستمع",
-    "همم قل ماذا ستفعل 😒",
-    "حتى أثناء اللعب تناديني 😑🌚🔞",
-    "قل ماذا يمكنني أن أفعل من أجلك",
-    "أنا لا أرى أي شيء 👀 😎",
-    "رئيس راهات يحبك 😌",
-    "قل يا جانو 🌚",
-    "ألا ترى أنني مشغول مع جانو 😒",
-    "همم جانو، هناك مشكلة 😑😘",
-    "أهلاً اسمع، جانو في كل مكان 😇😘",
-    "ماذا ستفعل؟ 😒😬",
-    "السلام عليكم، قل ماذا يمكنني أن أفعل من أجلك..! 🥰",
-    "لا تناديني كثيراً، أعطه لصديقته 🙄",
-    "لماذا تناديني كثيراً؟ 🤔 هل تحب أم لا؟ 🤭🙈",
-    "🌻🌺💚 السلام عليكم ورحمة الله 💚🌺🌻",
-    "أنا مشغول الآن مع رئيس راهات، لا تناديني 😕😏 شكرًا 🤝🌻",
-    "لا تناديني، أعطه لصديقته 😽🫶🌺",
-    "جانو 🥺 الآن قل للبوت فقط 😒 نسيت؟ 🙂❓",
-    "أفف لم أفهم لماذا تنادي هكذا 😤😡😈"
+    "مرحبًا! كيف حالك اليوم؟ 😄",
+    "لا تزعجني كثيرًا، أنا مشغول الآن 😒",
+    "أنا أحبك جدًا 💖",
+    "اذكرني إذا احتجت أي مساعدة 🤗",
+    "لماذا كل هذا الإلحاح؟ 😑",
+    "هيا أخبرني، ماذا تريد مني؟ 😐",
+    "ابتسم، الحياة جميلة 🌸",
+    "توقف عن الإزعاج قليلًا، أحتاج للراحة 🙁",
+    "مرحبًا يا عزيزي، كيف حالك؟ 😚",
+    "لا يمكنني التحدث مع من يزعجني 😼",
+    "تعال قريبًا لأعطيك شيئًا مفيدًا 🤭",
+    "اذهب بعيدًا، ليس لديك أي شيء لتفعله 😉😋",
+    "أنا هنا إذا احتجتني 🫶",
+    "اسمح لي أن أساعدك إذا أحببت 😘",
+    "توقف عن استخدام البوت كثيرًا 😅",
+    "أرسل لي أي أمر بالعربية لأرد عليك 📩"
   ];
 
   var rand = tl[Math.floor(Math.random() * tl.length)];
 
-  // أمثلة على الأوامر
-  if ((event.body.toLowerCase() == "MISS YOU") || (event.body.toLowerCase() == "miss you")) {
-    return api.sendMessage("<أفتقدك الليلة 🥹🤖👅/👅-✘ 🎀 🍒:))", threadID);
-  };
+  // أوامر ثابتة
+  if (event.body.toLowerCase() == "miss you") {
+    return api.sendMessage("أفتقدك الليلة 😹🤖", threadID);
+  }
 
+  if (event.body.toLowerCase() == "sim" || event.body.toLowerCase() == "simsimi") {
+    return api.sendMessage("أمر simsimi غير متوفر الآن، اكتب 'baby' للتجربة", threadID);
+  }
+
+  if (event.body.toLowerCase() == "bc" || event.body.toLowerCase() == "mc") {
+    return api.sendMessage("نفس الشيء لك 😊", threadID);
+  }
+
+  if (event.body.toLowerCase() == "morning") {
+    return api.sendMessage("صباح الخير! لا تنس تنظيف أسنانك 😚", threadID);
+  }
+
+  if (event.body.toLowerCase() == "rahat") {
+    return api.sendMessage("قل الحقيقة 🤬\nهل تحب البوس؟", threadID);
+  }
+
+  if (event.body.toLowerCase() == "owner" || event.body.toLowerCase() == "ceo") {
+    return api.sendMessage("‎[المالك:☞ Rahat ]", threadID);
+  }
+
+  if (event.body.toLowerCase() == "admin" || event.body.toLowerCase() == "boter admin") {
+    return api.sendMessage("هو Rahat ❤️ الجميع يعرفه باسم Rahat 🤙", threadID);
+  }
+
+  if (event.body.toLowerCase() == "ai") {
+    return api.sendMessage("لاستخدام أمر AI، اكتب /ai", threadID);
+  }
+
+  if (event.body.toLowerCase() == "chup" || event.body.toLowerCase() == "stop" || event.body.toLowerCase() == "chup kor") {
+    return api.sendMessage("اصمت الآن أيها المجنون 😅", threadID);
+  }
+
+  if (["assalamualaikum", "assalamu alaikum", "salam", "السلام عليكم"].includes(event.body.toLowerCase())) {
+    return api.sendMessage("وعليكم السلام 🖤", threadID);
+  }
+
+  // هنا أمر البوت بالعربية
   if (event.body.indexOf("/بوت") == 0) {
     var msg = {
       body: `${name}, ${rand}`
     }
     return api.sendMessage(msg, threadID, messageID);
-  };
-
-}
+  }
+};
 
 module.exports.run = function({ api, event, client, __GLOBAL }) { }
