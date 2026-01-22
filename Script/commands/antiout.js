@@ -3,7 +3,7 @@ module.exports.config = {
     version: "1.0.0",
     credits: "rX",
     hasPermssion: 1,
-    description: "Turn off antiout",
+    description: "تفعيل/إيقاف منع الخروج",
     usages: "antiout on/off",
     commandCategory: "system",
     cooldowns: 0
@@ -17,6 +17,5 @@ module.exports.run = async({ api, event, Threads}) => {
     await Threads.setData(event.threadID, { data });
     global.data.threadData.set(parseInt(event.threadID), data);
     
-    return api.sendMessage(`🎀 <\n ${(data["antiout"] == true) ? "𝐭𝐮𝐫𝐧 𝐨𝐧" : "𝐓𝐮𝐫𝐧 𝐨𝐟𝐟"} 𝐬𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥 𝐛𝐚𝐛𝐲`, event.threadID);
-
-}
+    return api.sendMessage(`🎀 <\n ${(data["antiout"] == true) ? "تم التفعيل" : "تم الإيقاف"} بنجاح`, event.threadID);
+        }
