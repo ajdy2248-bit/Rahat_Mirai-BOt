@@ -66,131 +66,17 @@ module.exports.handleEvent = async function({ api, event, args, Threads, Users }
     "أنا مشغول الآن مع رئيس راهات، لا تناديني 😕😏 شكرًا 🤝🌻",
     "لا تناديني، أعطه لصديقته 😽🫶🌺",
     "جانو 🥺 الآن قل للبوت فقط 😒 نسيت؟ 🙂❓",
-    "أفف لم أفهم لماذا تنادي هكذا 😤😡😈",
-    "جانو، ستعطي جدتك بيدي 🙊🙆‍♂",
-    "اليوم مزاجي سيء، لا تناديني 😪🤧",
-    "أحبك في الليل 🌺🤤💦",
-    "انظر لصديقة راهات المستقبلية، لا أستطيع العثور عليها 😪🤧😭",
-    "أريد أن أحلم بك، إذا أصبحت لي 💝🌺🌻",
-    "جانو، ماذا ستفعل 🙊😝🌻",
-    "إذا كنت فتاة، تعال مخفياً، أتعلم الحب من يوتيوب 🙊🙈😽",
-    "لماذا تنادي كثيراً؟ 😒🙈🖤🌼",
-    "محبتك كثيرة من رئيس راهات 🥰😽🫶، دعاء للجميع 💝",
-    "إذا أردت أن تحب، اذهب لصندوق الرسائل 🥱🙊🌶️🍆",
-    "لا تبالغ في الفخر 🌸 الموت مؤكد فقط الوقت غير مؤكد 🖤🙂",
-    "بعض الناس لا يحبوني شيئًا فشيئًا 🙂😿🌸",
-    "أنا أحبك 😽، كنت تفكر أنني سأقترح عليك 🥴، سأضرب كليتك 😒",
-    "أنا طفل رضيع 😇🫵 أنت 🐸💦",
-    "كم من الوقت مضى في الفراش 😿، أفتقدك 🥺🤧",
-    "هل ستتزوج 👸؟ سأساعدك 😻🙈🥱",
-    "هذه الفتاة 🙈😽 طعمها رائع 🥵💦",
-    "إذا قال أحدهم 🙂، سأحتاجك فقط 💜🌸",
-    "جميع الأشياء تُسرق 🙄، إلا قلب رئيس راهات 🥴😑😏",
-    "أحبك كثيرًا 😽، سأقترح في الوقت المناسب 🔨😼",
-    "لن أهتم بأحد بعد اليوم 😏، سأشتري كريم لتبييض بشرتي 🙂🐸"
+    "أفف لم أفهم لماذا تنادي هكذا 😤😡😈"
   ];
 
   var rand = tl[Math.floor(Math.random() * tl.length)];
 
+  // أمثلة على الأوامر
   if ((event.body.toLowerCase() == "MISS YOU") || (event.body.toLowerCase() == "miss you")) {
     return api.sendMessage("<أفتقدك الليلة 🥹🤖👅/👅-✘ 🎀 🍒:))", threadID);
   };
 
-  if ((event.body.toLowerCase() == "") || (event.body.toLowerCase() == "")) {
-    return api.sendMessage("", threadID);
-  };
-   
-  if ((event.body.toLowerCase() == "..........") || (event.body.toLowerCase() == "")) {
-    return api.sendMessage("اكتب !help", threadID);
-  };
-  
-  if ((event.body.toLowerCase() == "sim") || (event.body.toLowerCase() == "simsimi")) {
-    return api.sendMessage("اكتب أمر simsimi يا حبيبي", threadID);
-  };
-  
-  if ((event.body.toLowerCase() == "ওই কিরে") || (event.body.toLowerCase() == "oi keray") ||(event.body.toLowerCase() == "...") || (event.body.toLowerCase() == "...")) {
-    return api.sendMessage("حلو حلو 🍆⛏️🐸🤣", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "bc") || (event.body.toLowerCase() == "mc")) {
-    return api.sendMessage("نفس الشيء لك 😊", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "🫦") || (event.body.toLowerCase() == "💋")) {
-    return api.sendMessage("ماذا! هذه رموز تعبيرية؟", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "morning") || (event.body.toLowerCase() == "")) {
-    return api.sendMessage("صباح الخير، نظف أسنانك 😚", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "Rahat") || (event.body.toLowerCase() == "Rahat")) {
-    return api.sendMessage("قل الحقيقة 🤬، هل تحب الرئيس؟", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "রাহাত") || (event.body.toLowerCase() == "রাহাদ") || (event.body.toLowerCase() == "@rahat islam") || (event.body.toLowerCase() == "রাহাত")) {
-    return api.sendMessage("هو مشغول الآن، يمكنك أن تقول لي ماذا تريد..! 😘", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "owner") || (event.body.toLowerCase() == "ceo")) {
-    return api.sendMessage("‎[المالك:☞ Rahat ", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "Tor boss ke") || (event.body.toLowerCase() == "admin ke ")) {
-    return api.sendMessage("مُنشئي: Rahat", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "admin") || (event.body.toLowerCase() == "boter admin")) {
-    return api.sendMessage("هو راهات ❤️ الجميع يعرفه باسم راهات 🤙", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "ai") || (event.body.toLowerCase() == "Ai")) {
-    return api.sendMessage("إذا أردت استخدام أمر AI، اكتب /ai", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "chup") || (event.body.toLowerCase() == "stop") || (event.body.toLowerCase() == "চুপ কর") || (event.body.toLowerCase() == "chup kor")) {
-    return api.sendMessage("اصمت يا مجنون", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "আসসালামু আলাইকুম") || (event.body.toLowerCase() == "Assalamualaikum") || (event.body.toLowerCase() == "Assalamu alaikum") || (event.body.toLowerCase() == "Salam ")) {
-    return api.sendMessage("️- وعليكم السلام 🖤", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "sala ami tor boss") || (event.body.toLowerCase() == "sala ami ullas") || (event.body.toLowerCase() == "cup sala ami ullash") || (event.body.toLowerCase() == "madari")) {
-    return api.sendMessage("آسف يا رئيس، اعذرني لن يحدث هذا مرة أخرى 🥺🙏", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "@Farhana Ontora") || (event.body.toLowerCase() == "@Farhana Ontora ")) {
-    return api.sendMessage("احذر، لا تذكر هذا الاسم، إنه لزوجة رئيسي راهات 😠🥰⛏️", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "Farhana") || (event.body.toLowerCase() == "arohi")) {
-    return api.sendMessage("احذر، لا تنادي بهذا الاسم، إنه لزوجة رئيسي راهات 😠🥰⛏️", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "mim") || (event.body.toLowerCase() == "Mim")) {
-    return api.sendMessage("احذر، لا تنادي بهذا الاسم، إنه لزوجة رئيسي راهات 😠🥰⛏️", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "Arohi") || (event.body.toLowerCase() == "farhana")) {
-    return api.sendMessage("احذر، لا تنادي بهذا الاسم، إنه لزوجة رئيسي راهات 😠🥰⛏️", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "@MD Shiam Tafeder ") || (event.body.toLowerCase() == "সিয়াম")) {
-    return api.sendMessage("🥰-Siam-🌺 صديق رئيسي راهات، لا تقترب أي فتاة 😠🥰⛏️", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "KISS ME") || (event.body.toLowerCase() == "kiss me")) {
-    return api.sendMessage("لن أعطيك قبلة 🤭", threadID);
-  };
-
-  if ((event.body.toLowerCase() == "tnx") || (event.body.toLowerCase() == "ধন্যবাদ") || (event.body.toLowerCase() == "thank you") || (event.body.toLowerCase() == "thanks")) {
-    return api.sendMessage("لا تشكرني كثيرًا، اعثر على صديقة لرئيس راهات 🤬🌶️", threadID);
-  };
-
-  mess = "{name}";
-
-  if (event.body.indexOf("/Bot") == 0 || (event.body.indexOf("/bot") == 0)) {
+  if (event.body.indexOf("/بوت") == 0) {
     var msg = {
       body: `${name}, ${rand}`
     }
