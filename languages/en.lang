@@ -1,115 +1,116 @@
-# If you want to move down the line, please use \n. e.g: Rxabdullah\nAbdullah.
-# After changed, you have to restart the bot to use.
-# Put the # character at the beginning of each sentence if you don't want the code to run those lines. 
-# Thanks to https://www.facebook.com/duong.than.net for translate to English!
+# إذا أردت الانتقال إلى السطر التالي، استخدم \n. مثال: Rxabdullah\nAbdullah.
+# بعد التغيير، يجب إعادة تشغيل البوت لاستخدام التعديلات.
+# ضع الرمز # في بداية كل سطر إذا لم ترغب في تشغيله.
+# شكرًا لـ https://www.facebook.com/duong.than.net على الترجمة إلى الإنجليزية!
 
 # Abdullah.js 
 
-rxabdullah.newVersionDetected=𝐘𝐨𝐮 𝐚𝐫𝐞 𝐮𝐬𝐢𝐧𝐠 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 %1, 𝐭𝐡𝐞 𝐥𝐚𝐭𝐞𝐬𝐭 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝐢𝐬 %2. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐮𝐩𝐝𝐚𝐭𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐥𝐚𝐭𝐞𝐬𝐭 𝐯𝐞𝐫𝐬𝐢𝐨𝐧 𝐨𝐟 𝐟𝐨𝐫 𝐛𝐞𝐭𝐭𝐞𝐫 𝐛𝐨𝐭 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞. 𝐅𝐨𝐫 𝐮𝐩𝐝𝐚𝐭𝐞 𝐭𝐲𝐩𝐞 𝐢𝐧 𝐜𝐨𝐧𝐬𝐨𝐥𝐞/𝐜𝐦𝐝: 𝐧𝐨𝐝𝐞 𝐮𝐩𝐝𝐚𝐭𝐞
-rxabdullah.errorFormat=Malformed module!
-rxabdullah.nameExist=Module's name is similar to another module!
-rxabdullah.notFoundLanguage=Module %1 don't support your language
-rxabdullah.notFoundPackage=Can't find package %1 support for module %2, installing...
-rxabdullah.cantInstallPackage=Can't install package %1 for module %2, error: %3
-rxabdullah.loadedPackage=Installed whole package successfully for module %1
-rxabdullah.loadedConfig=Installed config successfully for module %1
-rxabdullah.cantLoadConfig=Can't install config of module %1, error: %2
-rxabdullah.cantOnload=Can't launch setup of module %1, error: %1
-rxabdullah.successLoadModule=Successfully installed module %1
-rxabdullah.failLoadModule=Can't install module %1, error: %2
-rxabdullah.finishLoadModule=Installed %1 module commands and %2 module events successfully 
-rxabdullah.foundPathAppstate=Found appstate file now logging in...
-rxabdullah.notFoundPathAppstate=Error can't find appstate file maybe file is malformed!
-rxabdullah.checkListGban=Checking global ban list...
-rxabdullah.banDevice=Your device have been banned from Rxproject, please contact to facebook https://fb.me/61582708907708 to know more information or asking for unban key, if you already have unban key, please fill it below.
-rxabdullah.keyNotSameFormat=Wrong format, code must contain 6 number.
-rxabdullah.codeInputExpired=Your code is wrong or out of date.
-rxabdullah.unbanDeviceSuccess=Your device are unban now, please restart to use.
-rxabdullah.userBanned=You had been banned from Rahat when %1 with reason: %2. Please contact to facebook fb.com/61582708907708 to have more information!
-rxabdullah.finishCheckListGban=Checked global ban list
-rxabdullah.handleListenError=handleListene has occurred some unexpected errorr, error : %1
-rxabdullah.warningSourceCode=DETECTED THAT SOURCE CODE'S STRUCTURE HAD BEEN CHANGED , STOP NOW!
-rxabdullah.refreshListen=Refreshed handleListener...
-rxabdullah.successConnectDatabase=Connected to database successfully!
-rxabdullah.failConnectDatabase=Failed to connect to database, error: %1
+rxabdullah.newVersionDetected=أنت تستخدم النسخة %1، النسخة الأحدث هي %2. الرجاء التحديث لأحدث نسخة للحصول على أداء أفضل للبوت. للتحديث، اكتب في الكونسول/CMD: node update
+rxabdullah.errorFormat=الوحدة تالفة!
+rxabdullah.nameExist=اسم الوحدة مشابه لوحدة أخرى!
+rxabdullah.notFoundLanguage=الوحدة %1 لا تدعم لغتك
+rxabdullah.notFoundPackage=لا يمكن العثور على الحزمة %1 للوحدة %2، جارٍ التثبيت...
+rxabdullah.cantInstallPackage=تعذر تثبيت الحزمة %1 للوحدة %2، خطأ: %3
+rxabdullah.loadedPackage=تم تثبيت الحزمة بالكامل بنجاح للوحدة %1
+rxabdullah.loadedConfig=تم تثبيت الإعدادات بنجاح للوحدة %1
+rxabdullah.cantLoadConfig=تعذر تثبيت إعدادات الوحدة %1، خطأ: %2
+rxabdullah.cantOnload=تعذر تشغيل إعدادات الوحدة %1، خطأ: %1
+rxabdullah.successLoadModule=تم تثبيت الوحدة %1 بنجاح
+rxabdullah.failLoadModule=تعذر تثبيت الوحدة %1، خطأ: %2
+rxabdullah.finishLoadModule=تم تثبيت %1 أوامر الوحدة و %2 أحداث الوحدة بنجاح
+rxabdullah.foundPathAppstate=تم العثور على ملف appstate، جاري تسجيل الدخول...
+rxabdullah.notFoundPathAppstate=خطأ! لم يتم العثور على ملف appstate ربما الملف تالف!
+rxabdullah.checkListGban=جارٍ التحقق من قائمة الحظر العالمية...
+rxabdullah.banDevice=تم حظر جهازك من Rxproject، الرجاء التواصل مع فيسبوك https://fb.me/61582708907708 لمزيد من المعلومات أو للحصول على مفتاح رفع الحظر. إذا كان لديك المفتاح، الرجاء إدخاله أدناه.
+rxabdullah.keyNotSameFormat=تنسيق خاطئ، يجب أن يحتوي الرمز على 6 أرقام.
+rxabdullah.codeInputExpired=رمزك خاطئ أو منتهي الصلاحية.
+rxabdullah.unbanDeviceSuccess=تم رفع الحظر عن جهازك، الرجاء إعادة التشغيل لاستخدامه.
+rxabdullah.userBanned=تم حظرك من Rahat عند %1 بسبب: %2. الرجاء التواصل مع فيسبوك fb.com/61582708907708 لمزيد من المعلومات!
+rxabdullah.finishCheckListGban=تم التحقق من قائمة الحظر العالمية
+rxabdullah.handleListenError=حدث خطأ غير متوقع في handleListener، الخطأ: %1
+rxabdullah.warningSourceCode=تم اكتشاف تغيير في بنية الكود المصدر، توقف فورًا!
+rxabdullah.refreshListen=تم تحديث handleListener...
+rxabdullah.successConnectDatabase=تم الاتصال بقاعدة البيانات بنجاح!
+rxabdullah.failConnectDatabase=فشل الاتصال بقاعدة البيانات، الخطأ: %1
 
 # includes/listen.js
 
-listen.startLoadEnvironment=Proceed to load the environment variable ...
-listen.loadedEnvironmentThread=Loaded thread environment variable successfully 
-listen.loadedEnvironmentUser=Loaded user environment variable successfully 
-listen.successLoadEnvironment=Loaded environment variable successfully 
-listen.failLoadEnvironment=Can't load environment variable, error: %1
+listen.startLoadEnvironment=جارٍ تحميل متغيرات البيئة ...
+listen.loadedEnvironmentThread=تم تحميل متغيرات البيئة للخيط بنجاح
+listen.loadedEnvironmentUser=تم تحميل متغيرات البيئة للمستخدم بنجاح
+listen.successLoadEnvironment=تم تحميل متغيرات البيئة بنجاح
+listen.failLoadEnvironment=تعذر تحميل متغيرات البيئة، الخطأ: %1
 
 # includes/controller/currencies.js
 
-currencies.needObjectOrArray=Have to be an Array or an Object or maybe both
-currencies.needObject=Have to be an Object
-currencies.needNumber= Have to be an number
+currencies.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كلاهما
+currencies.needObject=يجب أن يكون كائنًا
+currencies.needNumber=يجب أن يكون رقمًا
 
 # includes/controller/threads.js
 
-threads.needObjectOrArray=Have to be an Array or an Object or maybe both
-threads.needObject=Have to be an Object 
+threads.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كلاهما
+threads.needObject=يجب أن يكون كائنًا
 
 # includes/controller/users.js
 
-users.needObjectOrArray=Have to be an Array or an Object or maybe both
-users.needObject=Have to be an Object
+users.needObjectOrArray=يجب أن يكون مصفوفة أو كائن أو كلاهما
+users.needObject=يجب أن يكون كائنًا
 
 # includes/handle/handleCommand.js
 
-handleCommand.userBanned=𝐘𝐨𝐮 𝐰𝐚𝐬 𝐁𝐚𝐧𝐧𝐞𝐝 𝐟𝐫𝐨𝐦 𝐭𝐡𝐢𝐬 𝐛𝐨𝐱-!!🚫
-handleCommand.threadBanned=Group Has Been Banned..!⛔️\nPlease Contact Owner Rahat  For Unban ⚠️
-handleCommand.commandNotExist=❌প্রিয় এই কমান্ডটা নাই😌🍼\nএইটা আছে ➤ %1 
-handleCommand.commandUserBanned=You are unable to use command "%1"
-handleCommand.threadNotAllowNSFW=This Commnd Only for Rahat
-handleCommand.cantGetInfoThread=Can't get your thread's info, error: %1
-handleCommand.permssionNotEnough="%1"\n❌এই কমান্ডটা শুধু আমার বস এর জন্য💩🫵🏻
-handleCommand.cantSetMessageReaction=Having some unexpected error at setMessageReaction, error: %1
-handleCommand.executeCommand=[ %1 ] Command used: %2 by user: %3 at thread: %4 | Args included: %5 | Processing time: %6ms
-handleCommand.commandError=Having some unexpected error when using command %1, error: %2
+handleCommand.userBanned=تم حظرك من هذا الصندوق!!🚫
+handleCommand.threadBanned=تم حظر المجموعة..!⛔️\nالرجاء التواصل مع مالك Rahat لإلغاء الحظر ⚠️
+handleCommand.commandNotExist=❌عذرًا هذا الأمر غير موجود😌🍼\nالأوامر المتاحة ➤ %1
+handleCommand.commandUserBanned=لا يمكنك استخدام الأمر "%1"
+handleCommand.threadNotAllowNSFW=هذا الأمر مخصص لـ Rahat فقط
+handleCommand.cantGetInfoThread=تعذر الحصول على معلومات هذا الخيط، الخطأ: %1
+handleCommand.permssionNotEnough="%1"\n❌هذا الأمر مخصص فقط لمديري 💩🫵🏻
+handleCommand.cantSetMessageReaction=حدث خطأ غير متوقع عند تعيين التفاعل، الخطأ: %1
+handleCommand.executeCommand=[ %1 ] تم استخدام الأمر: %2 بواسطة المستخدم: %3 في الخيط: %4 | الوسائط: %5 | زمن المعالجة: %6ms
+handleCommand.commandError=حدث خطأ غير متوقع عند استخدام الأمر %1، الخطأ: %2
 
 # includes/handle/handleCommandEvent.js
 
-handleCommandEvent.moduleError=Having some unexpected error when using command %1, error: %2
+handleCommandEvent.moduleError=حدث خطأ غير متوقع عند استخدام الأمر %1، الخطأ: %2
 
 # includes/handle/handleCreateDatabase.js
 
-handleCreateDatabase.newThread=new thread: %1
-handleCreateDatabase.newUser=new user %1
+handleCreateDatabase.newThread=خيط جديد: %1
+handleCreateDatabase.newUser=مستخدم جديد: %1
 
 # includes/handle/handleEvent.js
 
-handleEvent.executeEvent=[ %1 ] Event was executed: %2 at thread: %3 | Processing time: %4ms
-handleEvent.eventError=Having some error when executing event %1, error: %12
+handleEvent.executeEvent=[ %1 ] تم تنفيذ الحدث: %2 في الخيط: %3 | زمن المعالجة: %4ms
+handleEvent.eventError=حدث خطأ عند تنفيذ الحدث %1، الخطأ: %12
 
 # includes/handle/handleReaction.js
 
-handleReaction.missingValue=Missing value to respond your problem
-handleReaction.executeError=Having some error when responding to your problem, error: %1
+handleReaction.missingValue=القيمة المرسلة غير موجودة للرد على مشكلتك
+handleReaction.executeError=حدث خطأ عند الرد على مشكلتك، الخطأ: %1
 
 # includes/handle/handleReply.js
 
-handleReply.missingValue=Missing value to respond your problem
-handleReply.executeError=Having some error when responding your problem, error: %1
+handleReply.missingValue=القيمة المرسلة غير موجودة للرد على مشكلتك
+handleReply.executeError=حدث خطأ عند الرد على مشكلتك، الخطأ: %1
 
 # includes/handle/handleSchedule.js
 
-handleSchedule.exectuteError=Having some error when schedule at module %1, error: %2
+handleSchedule.exectuteError=حدث خطأ عند الجدولة في الوحدة %1، الخطأ: %2
 
 # utils/index.js
 
-utils.throwError=ℹ️ →!← 𝐓𝐡𝐢𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐢𝐬 𝐧𝐨𝐭 𝐰𝐨𝐫𝐤𝐢𝐧𝐠 %1help %2 𝐮𝐬𝐞 𝐟𝐨𝐫 𝐨𝐭𝐡𝐞𝐫 𝐜𝐦𝐝💙🥺
+utils.throwError=ℹ️ →!← هذا الأمر لا يعمل %1استخدم %2 لأوامر أخرى💙🥺
+
 # updater.js
 
-updater.latestVersion=You are using the latest version
-updater.cantFindVersion=You are using an undefined version (%1), please check your package.json file again
-updater.newVersions=There are %1 new versions to update, starting to update...
-updater.updateSuccess=Update successfully%1
-updater.configChanged=The %1 has been changed, please check your config.json file again
-updater.installingPackages=Installing dependencies for bot...
-updater.installSuccess=Installed dependencies successfully, restart the bot to use the new version
-updater.backupSuccess=Successfully backed up changed files, see in the %1 folder
-updater.restartToApply=. Restart the bot to apply the new version
-updater.skipFile=There is a new version of the %1 file, but you have skipped this file during the update process with the comment %2 in this file
+updater.latestVersion=أنت تستخدم أحدث نسخة
+updater.cantFindVersion=أنت تستخدم نسخة غير معرفة (%1)، تحقق من ملف package.json
+updater.newVersions=هناك %1 نسخ جديدة للتحديث، جاري البدء بالتحديث...
+updater.updateSuccess=تم التحديث بنجاح %1
+updater.configChanged=تم تغيير %1، تحقق من ملف config.json مرة أخرى
+updater.installingPackages=جارٍ تثبيت التبعيات للبوت...
+updater.installSuccess=تم تثبيت التبعيات بنجاح، أعد تشغيل البوت لاستخدام النسخة الجديدة
+updater.backupSuccess=تم نسخ الملفات المعدلة احتياطيًا بنجاح، راجع المجلد %1
+updater.restartToApply=أعد تشغيل البوت لتطبيق النسخة الجديدة
+updater.skipFile=هناك نسخة جديدة من الملف %1، لكنك تخطيت هذا الملف أثناء التحديث باستخدام التعليق %2 في هذا الملف
